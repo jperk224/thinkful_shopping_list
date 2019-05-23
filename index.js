@@ -8,7 +8,7 @@ function addListItem(item) {
     let divItem = `<div class='shopping-item-controls'>${checkButton}${deleteButton}</div>`;
     let liItem = `<li>${listItem}${divItem}</li>`;
     if(item.length > 0) {
-        $(".shopping-list").append(liItem); //TODO: fix button margins
+        $(".shopping-list").append(liItem); //TODO: fix button margins if possible
     }
 }
 
