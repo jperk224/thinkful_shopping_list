@@ -7,7 +7,9 @@ function addListItem(item) {
     let listItem = `<span class='shopping-item'>${item}</span>`;
     let divItem = `<div class='shopping-item-controls'>${checkButton}${deleteButton}</div>`;
     let liItem = `<li>${listItem}${divItem}</li>`;
-    $(".shopping-list").append(liItem);
+    if(item.length > 0) {
+        $(".shopping-list").append(liItem); //TODO: fix button margins
+    }
 }
 
 // Event Listeners
@@ -16,9 +18,7 @@ function addToList() {
         event.preventDefault();
         const input = $("#shopping-list-entry");
         // make sure there's input before appending the list
-        if(input.val().length > 0) {
-            addListItem(input.val());
-        }
+        addListItem(input.val());
         // clear the input box
         input.val('');
     });
