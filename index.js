@@ -26,8 +26,8 @@ function addToList() {
 
 function crossOff() {
     $(".shopping-list").on('click', '.shopping-item-toggle', function(event) {
-        // grab the span preceding the parent div of the 'check' button and toggle the text-decoration class
-        $(this).parent().prev().toggleClass('shopping-item__checked');
+        // grab the encapsulating li and find the shopping item and toggle the text-decoration class
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
       });
 }
 
