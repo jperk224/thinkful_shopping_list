@@ -24,8 +24,16 @@ function addToList() {
     });
 }
 
+function crossOff() {
+    $(".shopping-list").on('click', '.shopping-item-toggle', function(event) {
+        // grab the span preceding the parent div of the 'check' button and toggle the text-decoration class
+        $(this).parent().prev().toggleClass('shopping-item__checked');
+      });
+}
+
 function removeItem() {
     $(".shopping-list").on('click', '.shopping-item-delete', function(event) {
+        // moving up the DOM hierarchy find the li encapsulating the delete button and remove it
         $(this).closest('li').remove();
       });
 }
@@ -34,3 +42,4 @@ function removeItem() {
 
 $(addToList);
 $(removeItem);
+$(crossOff);
